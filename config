@@ -229,11 +229,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# toggle split orientation
+#bindsym $mod+e split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -303,7 +300,7 @@ set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:✎"
 set $ws4 "4:"
-set $ws5 "5:"
+set $ws5 "5:☁ "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -324,14 +321,13 @@ assign [class="Xfce4-terminal"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Cursor"] $ws3
 assign [class="Thunar"] $ws4
-assign [class="TelegramDesktop"] $ws5
+assign [class="Steam"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+for_window [class=Steam] focus
 
 ##############
 # compositor #
@@ -395,7 +391,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/neondark4k.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/calm_4k.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
